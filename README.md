@@ -22,3 +22,6 @@ var input = {
   firstName:'<script src="malicious.js"></script>',
   lastName:'<h1>
 };
+
+var sanitizedInput = sanitizeInput(input);
+```
