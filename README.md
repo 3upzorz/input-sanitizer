@@ -20,8 +20,16 @@ Sanitizes string inputs by getting rid harmful javascript to prevent XSS. Also t
 var sanitizeInput = require('input-sanitizer').sanitizeInput;
 var input = {
   firstName:'<script src="malicious.js"></script>',
-  lastName:'<h1>
+  lastName:'<h1>Doe</h1>',
+  
 };
-
 var sanitizedInput = sanitizeInput(input);
 ```
+
+sanitizedInput will contain:
+
+```
+{
+  firstName:'',
+  lastName:'&lt;h1&gt;Doe&lt;/h1&gt;'
+}
